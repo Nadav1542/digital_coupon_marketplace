@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Environment files
+api/.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Docker data volumes
+mongo_data/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Memory/working notes
+memory.md

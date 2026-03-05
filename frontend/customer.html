@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop — Coupon Marketplace</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>Coupon Marketplace</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/admin.html">Admin</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- ─── Toast Container ──────────────────────── -->
+    <div class="toast-container" id="toasts"></div>
+
+    <h2 class="section-title">Available Coupons</h2>
+    <p class="text-muted mb-2">Browse digital coupons and purchase instantly</p>
+
+    <div id="productGrid" class="card-grid">
+      <div class="text-center text-muted" style="grid-column:1/-1; padding:60px 0;">
+        <span class="loading-spinner"></span>
+        <p class="mt-1">Loading products...</p>
+      </div>
+    </div>
+
+    <!-- ─── Purchase Result Modal ────────────────── -->
+    <div id="modalOverlay" class="modal-overlay hidden" onclick="customerApp.closeModal(event)">
+      <div class="modal" onclick="event.stopPropagation()">
+        <h2 id="modalTitle">Purchase Successful!</h2>
+        <div class="value-reveal">
+          <div class="label">Your Coupon Code</div>
+          <div class="value" id="modalValue">—</div>
+        </div>
+        <div style="font-size:0.85rem; color:#666; margin-bottom:6px;">
+          <strong>Value type:</strong> <span id="modalValueType">—</span>
+        </div>
+        <div style="font-size:0.85rem; color:#666; margin-bottom:16px;">
+          <strong>Price paid:</strong> <span id="modalPrice">—</span>
+        </div>
+        <div class="alert alert-info" style="font-size:0.85rem;">
+          Save this value now — it will not be shown again.
+        </div>
+        <div class="text-center mt-2">
+          <button class="btn btn-primary" onclick="customerApp.closeModal()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/customer.js"></script>
+</body>
+</html>
